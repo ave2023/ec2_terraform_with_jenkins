@@ -11,7 +11,9 @@ terraform {
 
 provider "aws" {
   region     = "us-west-2"
-  arn    = "arn:aws:iam::300250510459:role/ec2ar"
+  assume_role {
+    role_arn    "arn:aws:iam::300250510459:role/ec2ar"
+  }
 }
 resource "aws_security_group" "vault_sg_jenkins" {
   name        = "vault_sg_test"
