@@ -15,7 +15,7 @@ provider "aws" {
   secret_key = "H5AxVxr+A1cxkFQoUA5+WmejVvzVl+2G3aJYJV4w"
 }
 resource "aws_security_group" "vault_sg_jenkins" {
-  name        = "vault_sg_jenkins"
+  name        = "vault_sg_test"
   description = "Allow ports for jenkins and Vault"
   ingress {
     from_port   = 8000
@@ -48,10 +48,6 @@ resource "aws_security_group" "vault_sg_jenkins" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-}
-resource "aws_key_pair" "test" {
-  key_name = "test"
-  
 }
 resource "aws_instance" "my-ec2" {
   ami                    = "ami-00cf8fcabcdf3e0b7"
