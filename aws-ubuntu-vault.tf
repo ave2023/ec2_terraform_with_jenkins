@@ -11,8 +11,7 @@ terraform {
 
 provider "aws" {
   region     = "us-west-2"
-  access_key = "AKIAUL2CTGR5YVCCUWMQ"
-  secret_key = "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"
+  profile = "arn:aws:iam::300250510459:user/common"
 }
 resource "aws_security_group" "vault_sg_jenkins" {
   name        = "vault_sg_test"
